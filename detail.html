@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product</title>
+	<style>
+	    .child{
+		   border:1px solid red;
+		   width:23%;
+		   height:60vh;
+		}
+		.main{
+			 display:flex;
+			 justify-content:space-between;
+		}
+		#btn{
+		  padding:5px;
+		  margin-left:8rem;
+		  margin-top:2rem;
+		}
+	</style>
+	
+	</head>
+<body>
+    <h1>Products</h1>
+    <script>
+	    var details=[
+		{
+			id:1,
+		    Name:"Mobile",
+			image:"mobile.png",
+			Model:"SAMSANG",
+			price:15000
+		},
+		{
+			id:2,
+		    Name:"Plusar",
+			image:"plusar.jpg",
+			Model:"SAMSANG",
+			price:16000
+		},
+		{
+			id:3,
+		    Name:"PRIDGE",
+			image:"pridge.jpg",
+			Model:"SAMSANG",
+			price:20000
+		},
+		{
+			id:4,
+		    Name:"CAR",
+			image:"Audi.jpg",
+			Model:"SAMSANG",
+			price:30000
+		}
+		]
+	
+			var main=document.createElement("div")
+			document.body.appendChild(main);
+			main.setAttribute("class","main")
+			
+		    details.forEach((obj)=>{
+			
+		    var productBox=document.createElement("div");
+			main.appendChild(productBox);
+			productBox.setAttribute("class","child");
+			
+			var pic=document.createElement("div");
+			productBox.appendChild(pic);
+			pic.setAttribute("class","pic");
+			
+			var img=document.createElement("img");
+			pic.appendChild(img);
+		    img.src=obj.image;
+			img.style.width="100%"
+			img.style.height="40vh"
+			
+			var btn=document.createElement("button");
+			pic.appendChild(btn);
+			btn.style.backgroundColor="green"
+			btn.innerHTML="Click";
+			btn.setAttribute("class","btn");
+			btn.setAttribute("data-id",obj.id)
+
+
+       btn.addEventListener('click',showName(obj));
+     function showName(value){
+
+				let h1=document.createElement("h1");
+				document.body.appendChild(h1);
+				for(i=0;i<value.length;i++){
+				h1.innerHTML=value[i].Name;
+			}
+		}
+			
+});
+
+
+
+
+		
+		
+    </script>
+</body>
+</html>
